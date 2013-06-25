@@ -3,12 +3,7 @@
 require './micro_test'
 
 def f(n)
-  case n
-  when Integer
-    lambda { n * -1 }
-  else
-    n.call
-  end
+  n * Complex::I
 end
 
 MicroTest.test do |test|
