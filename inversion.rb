@@ -2,10 +2,22 @@
 
 def assert_returns(input, actual, expected)
   if actual == expected
-    puts "#{input.inspect} => #{actual.inspect}"
+    pass "#{input.inspect} => #{actual.inspect}"
   else
-    puts "Expected #{input.inspect} => #{expected.inspect}: got #{actual.inspect}"
+    fail "Expected #{input.inspect} => #{expected.inspect}: got #{actual.inspect}"
   end
+end
+
+def pass(message)
+  puts_color message, '32'
+end
+
+def fail(message)
+  puts_color message, '31'
+end
+
+def puts_color(message, color_code)
+  puts "\e[0;#{color_code}m" << message << "\e[0m"
 end
 
 #---
