@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 
 def assert_returns(input, actual, expected)
-  raise "Expected #{input} to produce #{expected}: got #{actual}" if actual != expected
+  if actual == expected
+    puts "#{input.inspect} => #{actual.inspect}"
+  else
+    puts "Expected #{input.inspect} => #{expected.inspect}: got #{actual.inspect}"
+  end
 end
 
 #---
